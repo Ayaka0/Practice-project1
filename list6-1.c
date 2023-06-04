@@ -1,19 +1,19 @@
 #include<stdio.h>
 
-int min2(int a, int b)
+int cube(int x)
 {
-	return a < b ? a : b;
+	return x * x * x;
 }
 
 int main(void)
 {
-	int n1, n2;
+	int num;
 
-	printf("2つの値を入力せよ：\n");
-	printf("整数a:"); scanf("%d", &n1);
-	printf("整数b:"); scanf("%d", &n2);
+	printf("値を入力せよ：\n");
+	printf("整数:"); scanf("%d", &num);
+	
 
-	printf("小さい方の値は%dです。\n", min2(n1, n2));
+	printf("%dの3乗は%dです\n", num, cube(num));
 
 	return 0;
 
