@@ -1,23 +1,39 @@
+//Œx•ñ‚ğŒJ‚è•Ô‚µ”­‚·‚é
 #include<stdio.h>
 
-int calculateSum(int n)
+//•¶šch‚ğnŒÂ˜A‘±‚µ‚Ä•\¦
+void put_chars(int ch, int n)
 {
-	int sum = 0; //˜a‚ğŠi”[‚·‚é•Ï”
-
-	int i;
-	for (i = 1; i <= n; i++) {
-		sum += i; //i‚ğsum‚É‰ÁZ
-	}
-	return sum;
+	while (n-- > 0)
+		putchar(ch);
 }
+
+//•¶šch‚ğnŒÂ˜A‘±‚µ‚Ä•\¦‚µ‚Ä‰üs
+void put_chars_ln(int ch, int n)
+{
+	put_chars(ch, n);
+	putchar('\n');
+}
+
+//Œx•ñ‚ğn‰ñ˜A‘±‚µ‚Ä”­‚·‚é
+void alert(int n)
+{
+	put_chars('\a', n);
+}
+
 int main(void)
 {
 	int n;
-	printf("®”n‚ğ“ü—ÍF");
-	scanf("%d", &n);
 
-	int result = calculateSum(n);
-	printf("‚P‚©‚ç%d‚Ü‚Å‚Ì‘S®”‚Ì˜a‚Í%d‚Å‚·B\n", n, result);
+	put_chars_ln('=', 24);
+	printf("Œx•ñ‚ğ”­‚·‚é‰ñ”F");
+	scanf("%d", &n);
+	put_chars_ln('-', 24);
+
+	alert(n);
+	putchar('\n');
+
+	put_chars_ln('=', 24);
 
 	return 0;
 
