@@ -1,19 +1,26 @@
 #include<stdio.h>
 
-int cube(int x)
+//2乗値を返す
+int sqr(int a)
 {
-	return x * x * x;
+	return a * a;
+}
+
+//4乗値を返す
+int pow4(int x)
+{
+	return sqr(x) * sqr(x);
 }
 
 int main(void)
 {
 	int num;
 
-	printf("値を入力せよ：\n");
-	printf("整数:"); scanf("%d", &num);
+	printf("値を入力せよ\n");
+	printf("整数:"); scanf("%d",&num);
 	
 
-	printf("%dの3乗は%dです\n", num, cube(num));
+	printf("%dの4乗は%dです\n", num, pow4(num));
 
 	return 0;
 
