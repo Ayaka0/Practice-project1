@@ -7,12 +7,11 @@ int main(void)
 	printf("整数値；");
 	scanf("%d", &no);
 
-	if (no % 3 == 0)
-		puts("３で割り切れる。");
-	else if (no % 3 == 1)
-		puts("３で割った剰余は１です。");
-	else
-		puts("3で割った剰余は２です。");
+	switch (no % 3) {
+	case 0: puts("3で割りけれる"); break;
+	case 1 : puts("3で割った剰余は１です。"); break;
+	case 2 : puts("3で割った剰余は２です。"); break;
+	}
 
 	return 0;
 
