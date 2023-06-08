@@ -2,22 +2,16 @@
 
 int main(void)
 {
-	int sum = 0;
-	int cnt = 0;
-	int retry;
+	int no;
 
-	do {
-		int t;
-		printf("®”’l‚ğ“ü—Í‚¹‚æG");
-		scanf("%d",&t);
+	printf("³‚Ì®”‚ğ“ü—Í");
+	scanf("%d", &no);
 
-		sum += sum;
-		cnt++;
-		printf("‚Ü‚¾Hyyes-0 / No-9zG");
-		scanf("%d",&retry);
-	} while (retry == 0);
-
-		printf("‡Œv‚Í%d‚Å•½‹Ï‚Í%.2f‚Å‚·B\n", sum, (double)sum / cnt);
+	while (no <= 10) {
+		printf("%d", no);
+		no++;
+	}
+	printf("\n");
 
 	return 0;
 
