@@ -2,22 +2,21 @@
 
 int main(void)
 {
-	int num;
+	int no;
 
-	printf("整数は何個？");
-	scanf("%d", &num);
-
-	int i = 0;
-	int sum = 0;
-	while (i < num) {
-		int tmp;
-		printf("No.%d : ", ++i);
-		scanf("%d", &tmp);
-		sum += tmp;
+	do {
+		printf("正の整数を入力せよ");
+		scanf("%d", &no);
+		if (no <= 0)
+			puts("正ではない数を入力しないでください");
+	} while (no <= 0);
+	
+	printf("その数を逆から読むと");
+	while (no > 0) {
+		printf("%d", no % 10);
+		no /= 10;
 	}
-
-	printf("合計値：%d\n", sum);
-	printf("平均値：%.2f\n", (double)sum / num);
+	puts("です。");
 
 	return 0;
 
