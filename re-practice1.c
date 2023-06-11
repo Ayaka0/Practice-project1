@@ -2,21 +2,21 @@
 
 int main(void)
 {
-	int no;
+	puts("正の整数値を加算します（終了は-9999）");
 
-	do {
-		printf("正の整数を入力せよ");
+	int sum = 0;
+	while (1) {
+		int no;
+
+		printf("整数値");
 		scanf("%d", &no);
-		if (no <= 0)
-			puts("正ではない数を入力しないでください");
-	} while (no <= 0);
-	
-	printf("その数を逆から読むと");
-	while (no > 0) {
-		printf("%d", no % 10);
-		no /= 10;
+		if (no == -9999)
+			break;
+		else if (no <= 0)
+			continue;
+		sum += no;
 	}
-	puts("です。");
+	printf("正の整数の合計は%dです。", sum);
 
 	return 0;
 
