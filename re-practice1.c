@@ -8,15 +8,13 @@ int main(void)
 	printf("³‚Ì®”‚ğ“ü—ÍG");
 	scanf("%d", &no);
 
-	if (no < 0)
-		return (0);
-
-	while (no >= 0) {
-		printf("%d", no);
-		no--;
+	
+	if  (no >= 1){
+		int i = 1;
+		while (i <= no)
+		printf("%d", i++);
+		printf("\n");
 	}
-	putchar('\n');
-
 	return 0;
 
 
