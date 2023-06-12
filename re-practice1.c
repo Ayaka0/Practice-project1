@@ -3,23 +3,28 @@
 int main(void)
 {
 
-	int retry;
+	int a, b;
+	int lower, upper;
 
+	printf("®”a;"); scanf("%d", &a);
+	printf("®”b;"); scanf("%d", &b);
+
+	if (a > b) {
+		lower = b;
+		upper = a;
+	} else {
+		lower = a;
+		upper = b;
+	}
+	
+	int sum = 0;
+	int no = lower;
 	do {
-		int no;
-		printf("®”‚ğ“ü—Í‚¹‚æ");
-		scanf("%d", &no);
+		sum += no;
+		no++;
+	} while (no <= upper);
 
-		if (no == 0)
-			puts("‚»‚Ì”‚Í‚O‚Å‚·");
-		else if (no > 0)
-			puts("‚»‚Ì”‚Í³‚Å‚·");
-		else
-			puts("‚»‚Ì”‚Í•‰‚Å‚·");
-
-		printf("again? yes: 0 / No: 1");
-		scanf("%d", &retry);
-	} while (retry == 0);
+	printf("%dˆÈã%dˆÈ‰º‚Ì‘S®”‚Ì˜a‚Í%d‚Å‚·B\n", lower, upper, sum);
 
 	return 0;
 
