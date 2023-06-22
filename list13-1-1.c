@@ -1,6 +1,17 @@
 //任意のファイルの存在をチェック
 #include<stdio.h>
 
+int fexist(const char* filename)
+{
+	FILE* fp;
+
+	if ((fp = fopen(filename, "r")) == NULL)
+		return 0;
+	fclose(fp);
+	return 1;
+}
+
+
 int main(void)
 {
 	FILE* fp;
@@ -11,11 +22,11 @@ int main(void)
 
 	fp = fopen(fname, "r");
 
-	if (fp == NULL)
-		printf("そのファイルは存在しません。\n");
-	else {
+	if (fexist(fname))
 		printf("そのファイルは存在します。\n");
-		fclose(fp); //ファイルをクローズ
+	else {
+		printf("そのファイルは存在しません。\n");
+		//fclose(fp); //ファイルをクローズ
 	}
 	return 0;
 }
