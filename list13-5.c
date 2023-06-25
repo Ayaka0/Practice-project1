@@ -1,4 +1,4 @@
-//ファイルの中身を表示する
+//ファイル中の改行文字の個数をカウントする
 
 #include<stdio.h>
 
@@ -14,9 +14,14 @@ int main(void)
 		printf("ファイルをオープンできません。\n");
 	else {
 		int ch;
+		int n_count = 0; //改行文字の出現回数
+
 		while ((ch = fgetc(fp)) != EOF)
-			putchar(ch);
+			if (ch == '\n')
+				n_count++;
+			//putchar(ch);
 		fclose(fp);
+		printf("そのファイルが%d行です。\n", n_count);
 	}
 
 	return 0;
