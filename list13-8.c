@@ -18,7 +18,8 @@ int main(void)
 			printf("コピー先ファイルをオープンできません。\n");
 		else {
 			int ch; while ((ch = fgetc(sfp)) != EOF) {
-				putchar(ch); //画面に出力
+				fputc(touuper(ch), dfp);
+				//putchar(ch); //画面に出力
 				fputc(ch, dfp);
 			}
 			fclose(dfp); //コピー先をクローズ
