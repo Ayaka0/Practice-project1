@@ -19,6 +19,7 @@ int main(void)
 		else {
 			int ch; while ((ch = fgetc(sfp)) != EOF) {
 				fputc(touuper(ch), dfp);
+				//fputc(tolowerr(ch), dfp);
 				//putchar(ch); //âÊñ Ç…èoóÕ
 				fputc(ch, dfp);
 			}
