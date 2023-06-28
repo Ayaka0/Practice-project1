@@ -2,13 +2,14 @@
 
 int main(void)
 {
-	int height;
+	double height, weight;
 
-	printf("身長を入力せよ\n");
-	scanf("%d", &height);
+	printf("身長を入力せよ\n");scanf("%lf", &height);
+	printf("体重を入力せよ\n"); scanf("%lf", &weight);
 	
+	double bmi = weight / (height/100 * height/100);
 
-	printf("標準体重は%.1fです。", (height - 100) * 0.9);
+	printf("BMIは%.2fです。", bmi);
 
 
 	return 0;
