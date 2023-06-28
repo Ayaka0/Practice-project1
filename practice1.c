@@ -3,16 +3,16 @@
 int main(void)
 {
 
-	int no;
+	int a, b;
 
-	printf("整数を入力せよ。\n"); scanf("%d", &no);
+	puts("２つの整数を入力せよ。\n");
+	printf("整数a：");  scanf("%d", &a);
+	printf("整数b：");  scanf("%d", &b);
 
+	int wa = a + b;
+	int seki = a * b;
 
-	printf("7を加えると%dです。\n", no + 7);
-	printf("7を減じると%dです。\n", no - 7);
-	printf("7を乗じると%dです。\n", no * 7);
-	printf("7を除した商は%dです。\n", no / 7);
-	printf("7を除した余剰%dです。\n", no % 7);
+	printf("それらの和は%dで積は%dです。\n",wa, seki);
 
 	return 0;
 }
