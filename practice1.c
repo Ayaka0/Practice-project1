@@ -3,15 +3,13 @@
 int main(void)
 {
 
-	int n1, n2;
+	double no;
 
-	puts("整数を入力せよ"); 
-	printf("整数n1：");  scanf("%d", &n1);
-	printf("整数n2：");  scanf("%d", &n2);
+	printf("半径："); scanf("%lf", &no);
 
-	int ave = (n1 + n2) / 2;
+	double half = no * no * 3.14;
 
-	printf("平均値%dの符号を反転した値は%dです。\n",+ave, -ave);
+	printf("円の面積は%fです。\n",half);
 
 	return 0;
 }
