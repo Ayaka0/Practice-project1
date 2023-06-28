@@ -3,16 +3,11 @@
 int main(void)
 {
 
-	int a, b;
+	double no;
 
-	puts("２つの整数を入力せよ。\n");
-	printf("整数a：");  scanf("%d", &a);
-	printf("整数b：");  scanf("%d", &b);
+	printf("実数を入力せよ："); scanf("%lf", &no);
 
-	int wa = a + b;
-	int seki = a * b;
-
-	printf("それらの和は%dで積は%dです。\n",wa, seki);
+	printf("あなたは%fと入力しましたね。\n",no);
 
 	return 0;
 }
