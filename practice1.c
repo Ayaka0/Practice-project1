@@ -2,13 +2,13 @@
 
 int main(void)
 {
-	int a, b;
+	int height;
 
-	printf("２つの整数入力せよ\n");
-	printf("整数a："); scanf("%d", &a);
-	printf("整数b："); scanf("%d", &b);
+	printf("身長を入力せよ\n");
+	scanf("%d", &height);
+	
 
-	printf("aの値はbの%f%%です。", (double)a/b*100.0);
+	printf("標準体重は%.1fです。", (height - 100) * 0.9);
 
 
 	return 0;
