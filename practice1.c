@@ -2,21 +2,21 @@
 
 int main(void)
 {
-	int no;
+	int a, b;
 
-	printf("点数：");
-	scanf("%d", &no);
+	puts("2つの整数を入力");
+	printf("整数A："); scanf("%d", &a);
+	printf("整数B："); scanf("%d", &b);
 
-	if (no > 100|| no < 0)
-		printf("不正な点数");
-	else if (no < 60)
-		printf("不可");
-	else if (no < 70)
-		printf("可");
-	else if (no < 80)
-		printf("良");
-	else
-		printf("優");
+	int min = a < b ? a : b;
+	int max = a > b ? a : b;
+
+	if (a == b)
+		printf("2つの値は等しいです。\n");
+	else {
+	printf("大きいほうの値は%dです。\n", max);
+	printf("小さいほうの値は%dです。\n", min);
+}
 
 	return 0;
 }
