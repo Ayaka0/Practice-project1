@@ -2,15 +2,17 @@
 
 int main(void)
 {
-	double height, weight;
+	int no;
 
-	printf("身長を入力せよ\n");scanf("%lf", &height);
-	printf("体重を入力せよ\n"); scanf("%lf", &weight);
-	
-	double bmi = weight / (height/100 * height/100);
+	printf("整数を入力せよ；");
+	scanf("%d", &no);
 
-	printf("BMIは%.2fです。", bmi);
-
+	if (no == 0)
+		puts("その数は０です。");
+	else if (no > 0)
+		puts("その数は正です。");
+	else if (no < 0)
+		puts("その数は負です");
 
 	return 0;
 }
