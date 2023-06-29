@@ -2,21 +2,26 @@
 
 int main(void)
 {
-	int a, b;
+	int month;
 
-	puts("2つの整数を入力");
-	printf("整数A："); scanf("%d", &a);
-	printf("整数B："); scanf("%d", &b);
+	printf("何月ですか：");
+	scanf("%d", &month);
 
-	int min = a < b ? a : b;
-	int max = a > b ? a : b;
-
-	if (a == b)
-		printf("2つの値は等しいです。\n");
-	else {
-	printf("大きいほうの値は%dです。\n", max);
-	printf("小さいほうの値は%dです。\n", min);
-}
+	switch (month) {
+	case 1: puts("1月は冬です"); break;
+	case 2: puts("2月は冬です"); break;
+	case 3: puts("3月は春です"); break;
+	case 4: puts("4月は春です"); break;
+	case 5: puts("5月は春です"); break;
+	case 6: puts("6月は夏です"); break;
+	case 7: puts("7月は夏です"); break;
+	case 8: puts("8月は夏です"); break;
+	case 9: puts("9月はあきです"); break;
+	case 10: puts("10月はあきです"); break;
+	case 11: puts("11月は秋です"); break;
+	case 12: puts("12月は冬です"); break;
+	default: puts("そんな月はありません。");
+	}
 
 	return 0;
 }
