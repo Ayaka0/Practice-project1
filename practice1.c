@@ -8,12 +8,16 @@ int main(void)
 	printf("整数A：");  scanf("%d", &a);
 	printf("整数B：");  scanf("%d", &b);
 
-	if (a == b)
-		printf("AとBは等しいです。\n");
-	else if (a > b)
-		printf("AはBはより大きいです。\n");
-	else
-		printf("BはAより大きいです。\n");
+
+	puts("等価式の値");
+		printf("a==bの値：%d\n", a==b);
+		printf("a!=bの値：%d\n", a != b);
+	
+	puts("関係式の値");
+		printf("a < bの値：%d\n", a < b);
+		printf("a <= bの値：%d\n", a <= b);
+		printf("a > bの値：%d\n", a > b);
+		printf("a >= bの値：%d\n", a >= b);
 	
 
 	return 0;
