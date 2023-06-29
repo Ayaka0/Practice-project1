@@ -9,8 +9,12 @@ int main(void)
 	printf("整数２："); scanf("%d", &n2);
 	printf("整数３："); scanf("%d", &n3);
 
-	int min = n1 < n2 ? n1 < n3 ? n1 : n3 : n2 < n3 ? n2 : n3;
-	printf("最小値は%dです。\n", min);
+	if (n1 == n2 && n2 == n3)
+		printf("3つの値が等しい");
+	else if (n1 == n2 || n2 == n3 || n1 == n3)
+		printf("2つの値が等しい");
+	else 
+		printf("3つとも値は異なります");
 	
 
 	return 0;
