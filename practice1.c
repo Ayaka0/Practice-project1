@@ -2,17 +2,19 @@
 
 int main(void)
 {
-	int no;
+	int a,b;
 
-	printf("整数を入力せよ；");
-	scanf("%d", &no);
+	printf("２つの整数を入力せよ；");
+	printf("整数A：");  scanf("%d", &a);
+	printf("整数B：");  scanf("%d", &b);
 
-	if (no == 0)
-		puts("その数は０です。");
-	else if (no > 0)
-		puts("その数は正です。");
-	else if (no < 0)
-		puts("その数は負です");
+	if (a == b)
+		printf("AとBは等しいです。\n");
+	else if (a > b)
+		printf("AはBはより大きいです。\n");
+	else
+		printf("BはAより大きいです。\n");
+	
 
 	return 0;
 }
