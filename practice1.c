@@ -2,16 +2,15 @@
 
 int main(void)
 {
-	int n1, n2;
+	int n;
 
-	puts("3つの整数を入力せよ");
-	printf("整数１："); scanf("%d", &n1);
-	printf("整数２："); scanf("%d", &n2);
+	printf("整数を入力せよ");
+	scanf("%d", &n);
 
-	if (n1 - n2 >10 || n2 - n1 > 10)
-		printf("それらの差は11以上です。\n");
-	else 
-		printf("それらの差は10以下です\n");
+	switch (n % 2) {
+	case 0: puts("その数は偶数です。"); break;
+	case 1: puts("その数は奇数です。"); break;
+	}
 	
 
 	return 0;
