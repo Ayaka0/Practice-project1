@@ -2,24 +2,31 @@
 
 int main(void)
 {
-	int retry; //処理を続けるか
+	int a, b;
+	int lower, upper;
 
-	do {
-		int no;
+		printf("2つの整数を入力せよ。\n");
+		printf("整数a；"); scanf("%d", &a);
+		printf("整数b；"); scanf("%d", &b);
 
-		printf("整数を入力せよ");
-		scanf("%d", &no);
+		if (a > b) {
+			lower = b;
+			upper = a;
+		}
+		else {
+			lower = a;
+			upper = b;
+		}
 
-		if (no == 0)
-			printf("その数は０です\n");
-		else if (no > 0)
-			printf("その数は正です\n");
-		else
-			printf("その数は負です。\n");
+		int sum = 0;
+		int no = lower;
 
-		printf("もう一度？【yes …0 / no…9】:");
-		scanf("%d", &retry);
-	} while (retry == 0);
+		do {
+			sum = sum + no;
+			no = no + 1;
+		} while (no <= upper);
+
+	printf("%d以上%d以下の全整数の和は%dです。", lower, upper, sum);
 
 	return 0;
 }
