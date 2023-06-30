@@ -2,26 +2,24 @@
 
 int main(void)
 {
-	int month;
+	int retry; //ˆ—‚ğ‘±‚¯‚é‚©
 
-	printf("‰½Œ‚Å‚·‚©F");
-	scanf("%d", &month);
+	do {
+		int no;
 
-	switch (month) {
-	case 1: puts("1Œ‚Í“~‚Å‚·"); break;
-	case 2: puts("2Œ‚Í“~‚Å‚·"); break;
-	case 3: puts("3Œ‚Ít‚Å‚·"); break;
-	case 4: puts("4Œ‚Ít‚Å‚·"); break;
-	case 5: puts("5Œ‚Ít‚Å‚·"); break;
-	case 6: puts("6Œ‚Í‰Ä‚Å‚·"); break;
-	case 7: puts("7Œ‚Í‰Ä‚Å‚·"); break;
-	case 8: puts("8Œ‚Í‰Ä‚Å‚·"); break;
-	case 9: puts("9Œ‚Í‚ ‚«‚Å‚·"); break;
-	case 10: puts("10Œ‚Í‚ ‚«‚Å‚·"); break;
-	case 11: puts("11Œ‚ÍH‚Å‚·"); break;
-	case 12: puts("12Œ‚Í“~‚Å‚·"); break;
-	default: puts("‚»‚ñ‚ÈŒ‚Í‚ ‚è‚Ü‚¹‚ñB");
-	}
+		printf("®”‚ğ“ü—Í‚¹‚æ");
+		scanf("%d", &no);
+
+		if (no == 0)
+			printf("‚»‚Ì”‚Í‚O‚Å‚·\n");
+		else if (no > 0)
+			printf("‚»‚Ì”‚Í³‚Å‚·\n");
+		else
+			printf("‚»‚Ì”‚Í•‰‚Å‚·B\n");
+
+		printf("‚à‚¤ˆê“xHyyes c0 / noc9z:");
+		scanf("%d", &retry);
+	} while (retry == 0);
 
 	return 0;
 }
