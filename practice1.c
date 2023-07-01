@@ -7,10 +7,12 @@ int main(void)
 	printf("³‚Ì®”‚ð“ü—Í‚¹‚æF");
 	scanf("%d", &no);
 
-	while (no >= 0) {
-		printf("%d", no);
-		no--;
-
+	if (no >= 1) {
+		int i = 1;
+		while (i <= no) {
+		printf("%d ", i++);
+		printf("\n");
+	}
 	}
 	
 	return 0;
