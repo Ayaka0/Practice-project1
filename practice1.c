@@ -10,8 +10,8 @@ int main(void)
 	if (no >= 1) {
 		int i = 2;
 		while (i <= no) {
-			printf("%d", i);
-		i += 2;
+			printf("%d ", i);
+		i *= 2;
 	}
 		printf("\n");
 	}
