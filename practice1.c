@@ -8,12 +8,11 @@ int main(void)
 	scanf("%d", &no);
 
 	if (no >= 1) {
-		int i = 2;
-		while (i <= no) {
-			printf("%d ", i);
-		i *= 2;
-	}
-		printf("\n");
+		int i = 1;
+		printf("{");
+		while (i < no)  //1‚©‚çno-1‚Ü‚Å‚ð•\Ž¦
+			printf("%d,", i++);
+			printf("%d}\n", no); //no‚ð•\Ž¦
 	}
 
 	return 0;
