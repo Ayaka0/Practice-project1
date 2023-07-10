@@ -1,19 +1,20 @@
 #include<stdio.h>
 
-int main(void)
-{
-	int no;
+int main(void) {
 
-	printf("正の整数を入力せよ：");
+	int no; //int型変数no
+
+	printf("正の整数を入力する;");
 	scanf("%d", &no);
 
-	if (no >= 1) {
-		int i = 1;
-		printf("{");
-		while (i < no)  //1からno-1までを表示
-			printf("%d,", i++);
-			printf("%d}\n", no); //noを表示
+	if (no >= 0) {
+		while (no >= 0) {
+			printf("%d ", no);
+			no--;	//noデクリメント
+		}
+		printf("\n");
 	}
 
-	return 0;
+	return;
+
 }
