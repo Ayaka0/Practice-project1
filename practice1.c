@@ -7,14 +7,14 @@ int main(void) {
 	printf("正の整数を入力する;");
 	scanf("%d", &no);
 
-	if (no > 0) {
-		while (no > 0) {
-			printf("%d ", no);
-			no--;	//noデクリメント
+	if (no >= 1) {
+		int i = 2; //カウントアップ用に必要な変数
+		while (i <= no) {
+			printf("%d ", i);
+			i *= 2;//iの値を表示した後にインクリメント
 		}
 		printf("\n");
 	}
-
 	return;
 
 }
