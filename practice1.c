@@ -2,19 +2,17 @@
 
 int main(void) {
 
-	int no; //int型変数no
+	int no;
 
-	printf("正の整数を入力する;");
+	printf("正の整数");
 	scanf("%d", &no);
 
-	if (no >= 1) {
-		int i = 2; //カウントアップ用に必要な変数
-		while (i <= no) {
-			printf("%d ", i);
-			i *= 2;//iの値を表示した後にインクリメント
+	if (no > 0) {
+		while (no-- > 0) {
+			putchar('*');
 		}
-		printf("\n");
+		putchar('\n');
 	}
-	return;
 
+	return;
 }
