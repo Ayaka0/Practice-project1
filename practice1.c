@@ -7,12 +7,13 @@ int main(void) {
 		printf("ê≥ÇÃêÆêîÅF");
 		scanf("%d", &no);
 
-		printf("%dÇãtÇ©ÇÁì«ÇﬁÇ∆", no);
+		printf("%dÇÕ", no);
+		int i = 0;
 		while (no > 0) {
-			printf("%d", no % 10);
 			no /= 10;
+			i++;
 		}
-		puts("Ç≈Ç∑ÅB\n");
+		printf("%dåÖÇ≈Ç∑ÅB", i);
 		
 	return 0;
 }
