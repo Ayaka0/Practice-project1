@@ -1,28 +1,30 @@
 #include <stdio.h>
 
 
-unsigned long getAreaTriangle(unsigned long bottom, unsigned long height)
+unsigned long getFactorial(unsigned short number)
 {
-	unsigned long area;
+	unsigned long calc = 1;
+	unsigned short i;
 
-	//面積を計算
-	area = bottom * height / 2;
+	//順に加算
+	for (i = 1; i <= number; i++)
+	{
+		//自己代入
+		calc *= i;
+	}
 
-	//面積を戻り値で返却
-	return area;
+	//加算結果を戻り値とする
+	return calc;
 }
 
 
 
 int main(void)
 {
-	unsigned long bottom = 15;
-	unsigned long height = 20;
-	unsigned long area;
+	unsigned short num = 4;
 
-	area = getAreaTriangle(bottom, height);
-
-	printf("底辺：%d 高さ：%d 面積：%d",bottom, height, area);
+	//関数の戻り値を直接表示
+	printf("数：%d 階乗：%d", num, getFactorial(num));
 
 	return 0;
 }
