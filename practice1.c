@@ -1,20 +1,36 @@
 #include <stdio.h>
 
+//グローバル変数で定義
+//挨拶の番号
+char echoNo = 0;
 
-void displaySquare(unsigned short len)
+
+void echoGreeting(void)
 {
-	unsigned short i, j;
-
-	for (i = 0;i < len; i++)
+	switch (echoNo)
 	{
-		for (j = 0; j < len; j++)
-		{
-			printf("#");
-		}
+	case 0:
+		printf("おはようございます\n");
+		break;
 
-		//1行終わったら改行
-		printf("\n");
+	case 1:
+		printf("こんにちは\n");
+		break;
+
+	case 2:
+		printf("こんばんは\n");
+		break;
 	}
+
+	//呼び出し後に次の挨拶へ
+	echoNo++;
+
+	//最初に戻す
+	if (echoNo >= 3)
+	{
+		echoNo = 0;
+	}
+
 	return;
 }
 
@@ -22,10 +38,17 @@ void displaySquare(unsigned short len)
 
 int main(void)
 {
-	unsigned long length = 3;
+	//  おはようございます
+	echoGreeting();
 
-	//段数３で表示要求
-	displaySquare(length);
+	//  こんにちは
+	echoGreeting();
+
+	//  こんばんは
+	echoGreeting();
+
+	//  おはようございます
+	echoGreeting();
 
 	return 0;
 }
