@@ -1,30 +1,31 @@
 #include <stdio.h>
 
 
-unsigned long getFactorial(unsigned short number)
+void displaySquare(unsigned short len)
 {
-	unsigned long calc = 1;
-	unsigned short i;
+	unsigned short i, j;
 
-	//順に加算
-	for (i = 1; i <= number; i++)
+	for (i = 0;i < len; i++)
 	{
-		//自己代入
-		calc *= i;
-	}
+		for (j = 0; j < len; j++)
+		{
+			printf("#");
+		}
 
-	//加算結果を戻り値とする
-	return calc;
+		//1行終わったら改行
+		printf("\n");
+	}
+	return;
 }
 
 
 
 int main(void)
 {
-	unsigned short num = 4;
+	unsigned long length = 3;
 
-	//関数の戻り値を直接表示
-	printf("数：%d 階乗：%d", num, getFactorial(num));
+	//段数３で表示要求
+	displaySquare(length);
 
 	return 0;
 }
