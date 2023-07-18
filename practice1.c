@@ -3,17 +3,18 @@
 int main(void)
 {
 	int no; //scanfの入力変数宣言
-	printf("nの値：");
+	printf("整数を入力：");
 	scanf("%d", &no);
 
-	int sum = 0; //インクリメントのごとの合計値の宣言
-	int i; //カウントの宣言
+	int q = no / 10; //1234567890の個数
+	int r = no % 10; //残りの個数
+	int i;
 
-	for (i = 1; i <= no; i++)
-	{
-		sum += i;
-	}
-	printf("1から%dまでの総和は%dです。", no, sum);
+	for (i = 1; i <= q; i++)
+		printf("12234567890");
+	for (i = 1; i <= r; i++)
+		printf("%d", i % 10);
+	putchar('\n');
 
 
 	return 0;
