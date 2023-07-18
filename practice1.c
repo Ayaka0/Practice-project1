@@ -1,54 +1,22 @@
-#include <stdio.h>
-
-//グローバル変数で定義
-//挨拶の番号
-char echoNo = 0;
-
-
-void echoGreeting(void)
-{
-	switch (echoNo)
-	{
-	case 0:
-		printf("おはようございます\n");
-		break;
-
-	case 1:
-		printf("こんにちは\n");
-		break;
-
-	case 2:
-		printf("こんばんは\n");
-		break;
-	}
-
-	//呼び出し後に次の挨拶へ
-	echoNo++;
-
-	//最初に戻す
-	if (echoNo >= 3)
-	{
-		echoNo = 0;
-	}
-
-	return;
-}
-
-
+#include<stdio.h>
 
 int main(void)
 {
-	//  おはようございます
-	echoGreeting();
+	int no; //scanfの入力変数宣言
+	printf("nの値：");
+	scanf("%d", &no);
 
-	//  こんにちは
-	echoGreeting();
+	int sum = 0; //インクリメントのごとの合計値の宣言
+	int i; //カウントの宣言
 
-	//  こんばんは
-	echoGreeting();
+	for (i = 1; i <= no; i++)
+	{
+		sum += i;
+	}
+	printf("1から%dまでの総和は%dです。", no, sum);
 
-	//  おはようございます
-	echoGreeting();
 
 	return 0;
+
 }
+
