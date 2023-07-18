@@ -2,19 +2,14 @@
 
 int main(void)
 {
-	int no; //scanfの入力変数宣言
-	printf("整数を入力：");
-	scanf("%d", &no);
+	int lower, upper, step; //開始値、終了値、増分
 
-	int q = no / 10; //1234567890の個数
-	int r = no % 10; //残りの個数
-	int i;
+	printf("何cmから："); scanf("%d", &lower);
+	printf("何cmまで："); scanf("%d", &upper);
+	printf("何cmごと："); scanf("%d", &step);
 
-	for (i = 1; i <= q; i++)
-		printf("12234567890");
-	for (i = 1; i <= r; i++)
-		printf("%d", i % 10);
-	putchar('\n');
+	for (int height = lower; height <= upper; height += step)
+		printf("%dcm %.2fkg\n", height, (height - 100) * 0.9);
 
 
 	return 0;
