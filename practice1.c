@@ -2,15 +2,22 @@
 
 int main(void)
 {
-	int n;
+	int no; //*個表示
 
-	printf("整数値：");
-	scanf("%d", &n);
+	printf("何個*を表示させる？");
+	scanf("%d", &no);
 
-	int i;
-	for (i = 1; i <= n; i += 2)
-		printf("%d", i);
-	putchar('\n');
+	int i; //カウント宣言
+	int rem = no % 5;
+
+	for (i = 0; i < no / 5; i++)
+		puts("*****");
+	if (rem > 0)
+	{
+		for (i = 0; i < rem; i++)
+			putchar('*');
+		putchar('\n');
+	}
 
 
 	return 0;
