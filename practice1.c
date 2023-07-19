@@ -2,23 +2,20 @@
 
 int main(void)
 {
-	int no; //*個表示
+	int n; //整数値の宣言
 
-	printf("何個*を表示させる？");
-	scanf("%d", &no);
+	printf("整数値：");
+	scanf("%d", &n);
 
-	int i; //カウント宣言
-	int rem = no % 5;
+	int i;
+	int count = 0;
 
-	for (i = 0; i < no / 5; i++)
-		puts("*****");
-	if (rem > 0)
-	{
-		for (i = 0; i < rem; i++)
-			putchar('*');
-		putchar('\n');
-	}
-
+	for (i = 1; i <= n; i++)
+		if (n % i == 0) {
+			printf("%d\n", i);
+			count++;
+		}
+	printf("約数は%d個です。", count);
 
 	return 0;
 
