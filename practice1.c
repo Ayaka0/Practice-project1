@@ -2,14 +2,15 @@
 
 int main(void)
 {
-	int lower, upper, step; //開始値、終了値、増分
+	int n;
 
-	printf("何cmから："); scanf("%d", &lower);
-	printf("何cmまで："); scanf("%d", &upper);
-	printf("何cmごと："); scanf("%d", &step);
+	printf("整数値：");
+	scanf("%d", &n);
 
-	for (int height = lower; height <= upper; height += step)
-		printf("%dcm %.2fkg\n", height, (height - 100) * 0.9);
+	int i;
+	for (i = 1; i <= n; i += 2)
+		printf("%d", i);
+	putchar('\n');
 
 
 	return 0;
