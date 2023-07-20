@@ -2,20 +2,18 @@
 
 int main(void)
 {
-	int n; //整数値の宣言
+	int area; //面積
+	
+	printf("面積：");
+	scanf("%d", &area);
 
-	printf("整数値：");
-	scanf("%d", &n);
-
-	int i;
-	int count = 0;
-
-	for (i = 1; i <= n; i++)
-		if (n % i == 0) {
-			printf("%d\n", i);
-			count++;
-		}
-	printf("約数は%d個です。", count);
+	int tate;
+	for (tate = 1; tate < area; tate++)
+	{
+		if (tate * tate > area) break;
+		if (area % tate != 0) continue;
+		printf("%d x %d\n", tate, area / tate);
+	}
 
 	return 0;
 
