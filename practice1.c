@@ -2,18 +2,31 @@
 
 int main(void)
 {
-	int no; //入力値の宣言
-	int i, j; //縦と横のカウント宣言
+	int no1, no2, height, width;
+	printf("横長の長方形を作ります。\n");
+	printf("一辺（その１）："); scanf("%d", &no1);
+	printf("一辺（その２）："); scanf("%d", &no2);
 
-	printf("正方形を作ります。\n");
-	printf("何段ですか");  scanf("%d", &no);
-	
-	for (i = 1; i <= no; i++)
+	int i, j;
+
+	if (no1 < no2)
 	{
-		for (j = 1; j <= no; j++)
-			putchar('*', i * j);
+		height = no1;
+		width = no2;
+	}
+	else
+	{
+		height = no2;
+		width = no1;
+	}
+
+	for (i = 1; i <= height; i++)
+	{
+		for (j = 1; j <= width; j++)
+			putchar('*');
 		putchar('\n');
 	}
+
 
 	return 0;
 
