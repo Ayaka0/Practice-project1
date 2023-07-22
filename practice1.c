@@ -2,21 +2,17 @@
 
 int main(void)
 {
+	int no; //入力値の宣言
 	int i, j; //縦と横のカウント宣言
 
-	printf("   |");
-	for (i = 1; i <= 9; i++)
-		printf("%3d ", i);
-	putchar('\n');
-
-	printf("---+-------------------------------------\n");
-
-	for (i = 1; i <= 9; i++)
+	printf("正方形を作ります。\n");
+	printf("何段ですか");  scanf("%d", &no);
+	
+	for (i = 1; i <= no; i++)
 	{
-		printf("%d  |", i);
-			for (j = 1; j <= 9; j++)
-				printf("%3d ", i * j);
-			putchar('\n');
+		for (j = 1; j <= no; j++)
+			putchar('*', i * j);
+		putchar('\n');
 	}
 
 	return 0;
