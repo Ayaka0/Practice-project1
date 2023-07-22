@@ -2,17 +2,21 @@
 
 int main(void)
 {
-	int area; //面積
-	
-	printf("面積：");
-	scanf("%d", &area);
+	int i, j; //縦と横のカウント宣言
 
-	int tate;
-	for (tate = 1; tate < area; tate++)
+	printf("   |");
+	for (i = 1; i <= 9; i++)
+		printf("%3d ", i);
+	putchar('\n');
+
+	printf("---+-------------------------------------\n");
+
+	for (i = 1; i <= 9; i++)
 	{
-		if (tate * tate > area) break;
-		if (area % tate != 0) continue;
-		printf("%d x %d\n", tate, area / tate);
+		printf("%d  |", i);
+			for (j = 1; j <= 9; j++)
+				printf("%3d ", i * j);
+			putchar('\n');
 	}
 
 	return 0;
