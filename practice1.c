@@ -4,15 +4,14 @@ int main(void)
 {
 	int len;
 
-	printf("短辺：");
+	printf("ピラミッド：");
 	scanf("%d", &len);
 
-	int i, j;
-	for (i = len; i >= 1; i--)
-	{
+	int i,j;
+	for (i = 1; i <= len; i++) {
 		for (j = 1; j <= len - i; j++)
 			putchar(' ');
-		for (j = 1; j <= i; j++)
+		for (j = 1; j <= 2 * i - 1; j++)
 			putchar('*');
 		putchar('\n');
 	}
