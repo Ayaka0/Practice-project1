@@ -1,24 +1,31 @@
 #include<stdio.h>
 
-#define NUMBER 5
+#define NUMBER 7
 
 int main(void)
 {
-	int tensu[NUMBER];
-	int sum = 0;
+	int suuji[NUMBER];
 
 	printf("5人の点数を入力せよ\n", NUMBER);
 
 	int i;
-	for (i = 0; i < NUMBER; i++)
+	for (i = 0; i < NUMBER ; i++)
 	{
-	printf("%2d番：", i + 1);
-	scanf("%d", &tensu[i]);
-	sum += tensu[i];
+		printf("x[%d] : ", i);
+		scanf("%d", &suuji[i]);
 	}
 
-	printf("合計点：%5d\n", sum);
-	printf("平均点：%5.1f\n", (double)sum / NUMBER);
+	for (i = 0; i < NUMBER / 2; i++)
+	{
+		int t = suuji[i];
+		suuji[i] = suuji[NUMBER - i -1];
+		suuji[NUMBER - i - 1] = t;
+	}
+
+	puts("反転");
+	for (i = 0; i < NUMBER; i++)
+		printf("x[%d] = %d\n", i, suuji[i]);
+
 	return 0;
 
 }
