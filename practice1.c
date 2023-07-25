@@ -1,27 +1,24 @@
 #include<stdio.h>
 
+#define NUMBER 5
+
 int main(void)
 {
-	int x[7];
+	int tensu[NUMBER];
+	int sum = 0;
+
+	printf("5人の点数を入力せよ\n", NUMBER);
 
 	int i;
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < NUMBER; i++)
 	{
-		printf("x[%d]:", i);
-		scanf("%d", &x[i]);
+	printf("%2d番：", i + 1);
+	scanf("%d", &tensu[i]);
+	sum += tensu[i];
 	}
 
-	for (i = 0; i < 3; i++)
-	{
-		int t = x[i];
-		x[i] = x[6 - i];
-		x[6 - i] = t;
-	}
-
-	puts("反転したよ");
-	for(i = 0; i < 7; i++)
-		printf("x[%d] =%d\n", i, x[i]);
-
+	printf("合計点：%5d\n", sum);
+	printf("平均点：%5.1f\n", (double)sum / NUMBER);
 	return 0;
 
 }
