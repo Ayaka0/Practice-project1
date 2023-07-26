@@ -1,30 +1,32 @@
 #include<stdio.h>
 
-#define NUMBER 7
+#define NUMBER 50 //配列aの要素数
 
 int main(void)
 {
-	int suuji[NUMBER];
+	int num;
+	int a[NUMBER]; //データ数の宣言
 
-	printf("5人の点数を入力せよ\n", NUMBER);
+	printf("データ数：");
+	do
+	{
+		scanf("%d", &num);
+		if (num < 1 || num > NUMBER)
+			printf("1～%dで入力してください：", NUMBER);
+	} while (num < 1 || num > NUMBER);
 
 	int i;
-	for (i = 0; i < NUMBER ; i++)
+	for (i = 0; i < num; i++)
 	{
-		printf("x[%d] : ", i);
-		scanf("%d", &suuji[i]);
+		printf("%2d番：", i + 1);
+		scanf("%d", &a[i]);
 	}
 
-	for (i = 0; i < NUMBER / 2; i++)
-	{
-		int t = suuji[i];
-		suuji[i] = suuji[NUMBER - i -1];
-		suuji[NUMBER - i - 1] = t;
-	}
+	printf("{");
+	for (i = 0; i < num - 1; i++)
+		printf("%d, ", a[i]);
 
-	puts("反転");
-	for (i = 0; i < NUMBER; i++)
-		printf("x[%d] = %d\n", i, suuji[i]);
+	printf("%d}\n", a[num - 1]);
 
 	return 0;
 
