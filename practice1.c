@@ -31,19 +31,30 @@ int main(void)
 
 	puts("-----•ª•zƒOƒ‰ƒt------");
 	
-	int j;
+	int bunpu_max = 0;
+	for (i = 0; i <= 10; i++)
+		if (bunpu[i] > bunpu_max)
+			bunpu_max = bunpu[i];
 
-	for (i = 0; i <= 9; i++)
+	int j;
+	for (i = bunpu_max; i >= 1; i--)
 	{
-		printf("%3d`%3d : ", i * 10, i * 10 + 9);
-		for (j = 0; j < bunpu[i]; j++)
-			putchar('*');
+		for (j = 0; j <= 10; j++)
+		{
+			if (bunpu[j] >= i)
+				printf(" * ");
+			else
+				printf("   ");
+		}
 		putchar('\n');
 	}
-	printf("      100:");
-	for (j = 0; j < bunpu[10]; j++)
-		putchar('*');
-		putchar('\n');
+	for (i = 0; i < 34; i++)
+		putchar('-');
+	putchar('\n');
+	for (i = 0; i <= 10; i++)
+		printf("%2d ", i * 10);
+	putchar('\n');
+
 
 	return 0;
 
