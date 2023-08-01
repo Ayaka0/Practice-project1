@@ -6,29 +6,18 @@ int main(void)
 	int b[5]; //コピー先配列
 
 	int i;
-	for (i = 0; i < 5; i++) //要素に値を読み込む
+	for (i = 0; i < 5; i++)
 	{
 		printf("a[%d] : ", i);
 		scanf("%d", &a[i]);
 	}
-
-	/*配列aも並びを逆にする*/
-	for (i = 0; i < 2; i++)
-	{
-		int t = a[i];
-		a[i] = a[4 - i];
-		a[4 - i] = t;
-	}
-
-
-	/*配列aを配列bにコピーする*/
+	int count = 0; //コピーした要素数
 	for (i = 0; i < 5; i++)
-		b[i] = a[i];
+		if (a[i] > 0)	//正であれば
+			b[count++] = a[i]; //コピー
 
-	puts("   a    b");
-	puts("---------");
-	for (i = 0; i < 5; i++)
-		printf("%4d%4d\n", a[i], b[i]);
+	for (i = 0; i < count; i++)
+		printf("b[%d] = %d\n", i, b[i]);
 
 
 	return 0;
