@@ -1,50 +1,38 @@
 #include<stdio.h>
 
+#define NINZU 6
+
 int main(void)
 {
-	int a[2][1];
-	int b[3][2];
-	int c[3][2];
+	int tensu[NINZU][2];
+	int student[NINZU] = { 0 };
+	int subject[2] = { 0 };
 
-	int i, j;
-	puts("aの要素の値入力");
-	for(i = 0; i < 2; i++)
+	printf("%d人の点数を入力\n", NINZU);
+
+	int i;
+	for (i = 0; i < NINZU; i++)
 	{
-		for (j = 0; j < 1; j++)
-		{
-			printf("a[%d][%d] : ",i, j);
-			scanf("%d", &a[i][j]);
-		}
+		printf("%2d番…国語;", i + 1);
+			scanf("%d", &tensu[i][0]);
+			printf("    数学:", i + 1);
+			scanf("%d", &tensu[i][1]);
+
+			student[i] = tensu[i][0] + tensu[i][1];
+			subject[0] += tensu[i][0];
+			subject[1] += tensu[i][1];
 	}
 
-	puts("bの要素の値入力");
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 2; j++)
-		{
-			printf("a[%d][%d] : ", i, j);
-			scanf("%d", &b[i][j]);
-		}
-	}
+	printf("----------------------------\n");
+	printf("番号　国語　数学　合計　平均\n");
+	printf("----------------------------\n");
+	for (i = 0; i < NINZU; i++)
+		printf("%3d%6d%6d%6d%7.1f\n", i + 1, tensu[i][0], tensu[i][1], student[i], (double)student[i]/2);
+	printf("----------------------------\n");
+	printf("合計%5d%6d%6d\n", subject[0], subject[1], subject[0] + subject[1]);
+	printf("平均 %6.1f%6.1f%6.1f\n", (double)subject[0] / NINZU, (double)subject[1] / NINZU, (double)(subject[0] + subject[1] / NINZU));
+	printf("----------------------------\n");
 
-
-	int k;
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 2; j++)
-		{
-			c[i][j] = 0;
-			for (k = 0; k < 3; k++)
-				c[i][j] += a[i][j] * b[i][j];
-		}
-	}
-
-	puts("cの値");
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 2; j++)
-			printf("c[%d][%d] = %d\n", i, j, c[i][j]);
-	}
 
 
 	return 0;
