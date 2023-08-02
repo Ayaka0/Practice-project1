@@ -2,26 +2,49 @@
 
 int main(void)
 {
-	int a[5]; //コピー元配列
-	int b[5]; //コピー先配列
+	int a[2][1];
+	int b[3][2];
+	int c[3][2];
 
-	int i;
-	for (i = 0; i < 5; i++)
+	int i, j;
+	puts("aの要素の値入力");
+	for(i = 0; i < 2; i++)
 	{
-		printf("a[%d] : ", i);
-		scanf("%d", &a[i]);
+		for (j = 0; j < 1; j++)
+		{
+			printf("a[%d][%d] : ",i, j);
+			scanf("%d", &a[i][j]);
+		}
 	}
 
-	int count = 0; //コピーした要素数
-	for (i = 0; i < 5; i++)
-		if (a[i] > 0)	//正であれば
-			b[count++] = i; //コピー
+	puts("bの要素の値入力");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 2; j++)
+		{
+			printf("a[%d][%d] : ", i, j);
+			scanf("%d", &b[i][j]);
+		}
+	}
 
 
-	printf("正の要素は%dです。\n", count);
+	int k;
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 2; j++)
+		{
+			c[i][j] = 0;
+			for (k = 0; k < 3; k++)
+				c[i][j] += a[i][j] * b[i][j];
+		}
+	}
 
-	for (i = 0; i < count; i++)
-		printf("b[%d] = %d    a[%d] = %d\n", i, b[i], b[i],a[b[i]]);
+	puts("cの値");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 2; j++)
+			printf("c[%d][%d] = %d\n", i, j, c[i][j]);
+	}
 
 
 	return 0;
