@@ -1,39 +1,42 @@
 #include<stdio.h>
 
-#define NINZU 6
-
 int main(void)
 {
-	int tensu[NINZU][2];
-	int student[NINZU] = { 0 };
-	int subject[2] = { 0 };
+	int tensu[2][4][3] = {
+		{{91, 63, 78}, {67, 72, 46}, {89, 34, 53}, {32, 54, 34}},
+		{{97, 67, 82}, {73, 43, 46}, {97, 56, 21}, {85, 46, 35}},
+	};
+	int sum[4][3];
 
-	printf("%d人の点数を入力\n", NINZU);
-
-	int i;
-	for (i = 0; i < NINZU; i++)
+	//2回分の点数の合計を求める
+	int i, j;
+	for (i = 0; i < 4; i++)
 	{
-		printf("%2d番…国語;", i + 1);
-			scanf("%d", &tensu[i][0]);
-			printf("    数学:", i + 1);
-			scanf("%d", &tensu[i][1]);
-
-			student[i] = tensu[i][0] + tensu[i][1];
-			subject[0] += tensu[i][0];
-			subject[1] += tensu[i][1];
+		for (j = 0; j < 3; j++)
+			sum[i][j] = tensu[0][i][j] + tensu[1][i][j];
 	}
 
-	printf("----------------------------\n");
-	printf("番号　国語　数学　合計　平均\n");
-	printf("----------------------------\n");
-	for (i = 0; i < NINZU; i++)
-		printf("%3d%6d%6d%6d%7.1f\n", i + 1, tensu[i][0], tensu[i][1], student[i], (double)student[i]/2);
-	printf("----------------------------\n");
-	printf("合計%5d%6d%6d\n", subject[0], subject[1], subject[0] + subject[1]);
-	printf("平均 %6.1f%6.1f%6.1f\n", (double)subject[0] / NINZU, (double)subject[1] / NINZU, (double)(subject[0] + subject[1] / NINZU));
-	printf("----------------------------\n");
+	//各回の点数を表示
+	int k;
+	for (i = 0; i < 2; i++)
+	{
+		printf("%d回目の点数\n", i + 1);
+		for (j = 0; j < 4; j++)
+		{
+			for (k = 0; k < 3; k++)
+				printf("%4d", tensu[i][j][k]);
+			putchar('\n');
+		}
+	}
 
-
+	//合計点を表示
+	puts("合計点");
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 3; j++)
+			printf("%4d", sum[i][j]);
+		putchar('\n');
+	}
 
 	return 0;
 }
