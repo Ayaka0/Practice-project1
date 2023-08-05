@@ -1,30 +1,24 @@
 #include<stdio.h>
 
-int sumup(int n)
+void put_stars(int n)
 {
-	int sum = 0;
-
-
-	while (n > 0)
-		sum += n--;
-
-	/*
-	int i;
-	for (i = 1; i <= n; i++)
-		sum = i + sum;
-	*/
-
-	return sum;
+	while (n-- > 0)
+		putchar('*');
 }
 
 int main(void)
 {
-	int a;
+	int len;
 
-	printf("全整数の和を求める。\n");
-	printf("実数a : "); scanf("%d", &a);
+	printf("左下直角三角形\n");
+	printf("短辺："); scanf("%d",&len);
 
-	printf("%dの全整数の和は%dです。\n", a,sumup(a));
+	int i;
+	for (i = 1; i <= len; i++)
+	{
+		put_stars(i);
+		putchar('\n');
+	}
 
 	return 0;
 }
