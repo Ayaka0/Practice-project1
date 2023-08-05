@@ -4,9 +4,15 @@ int sumup(int n)
 {
 	int sum = 0;
 
+
+	while (n > 0)
+		sum += n--;
+
+	/*
 	int i;
 	for (i = 1; i <= n; i++)
 		sum = i + sum;
+	*/
 
 	return sum;
 }
