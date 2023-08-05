@@ -1,25 +1,24 @@
 #include<stdio.h>
 
-int sqr(int n)
+int sqr(int x)
 {
-	return n * n;
+	return x * x;
 }
 
-int diff(int a, int b)
+int pow4(int x)
 {
-	return a > b ? a - b : b - a;
+	return sqr(x) * sqr(x);
 }
-
 
 int main(void)
 {
-	int x, y;
+	int n1;
 
-	puts("2つの整数を入力");
-	printf("整数x : "); scanf("%d", &x);
-	printf("整数y : "); scanf("%d", &y);
+	puts("4乗値整数を入力せよ");
+	printf("整数n1 : "); scanf("%d", &n1);
 
-	printf("xの2乗とYの2乗の差は%dです。", diff(sqr(x), sqr(y)));
+
+	printf("最も大きい値は%dです。\n", pow4(n1));
 
 	return 0;
 }
