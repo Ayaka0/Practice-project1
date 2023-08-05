@@ -1,26 +1,24 @@
 #include<stdio.h>
 
-double power(double x, int n)
+int sumup(int n)
 {
-	double tmp = 1.0;
+	int sum = 0;
 
 	int i;
 	for (i = 1; i <= n; i++)
-		tmp *= x;
+		sum = i + sum;
 
-	return tmp;
+	return sum;
 }
 
 int main(void)
 {
-	double a;
-	int b;
+	int a;
 
-	printf("aのb乗を求める。\n");
-	printf("実数a : "); scanf("%lf", &a);
-	printf("実数b : "); scanf("%d", &b);
+	printf("全整数の和を求める。\n");
+	printf("実数a : "); scanf("%d", &a);
 
-	printf("%.2fの%d乗は%.2fです。\n", a, b, power(a, b));
+	printf("%dの全整数の和は%dです。\n", a,sumup(a));
 
 	return 0;
 }
