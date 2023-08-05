@@ -1,24 +1,24 @@
 #include<stdio.h>
 
-int max2(int a, int b)
+int max3(int a, int b, int c)
 {
-	if (a > b)
-		return a;
-	else
-		return b;
-}
+	int max = a;
+	if (b > max) max = b;
+	if (c > max) max = c;
 
+	return max;
+}
 
 int main(void)
 {
-	int n1, n2;
+	int a, b, c;
 
-	puts("2つの整数を入力せよ");
-	printf("整数１："); scanf("%d", &n1);
-	printf("整数２："); scanf("%d", &n2);
+	puts("3つの整数を入力せよ。");
+	printf("整数a：");  scanf("%d", &a);
+	printf("整数b：");  scanf("%d", &b);
+	printf("整数c：");  scanf("%d", &c);
 
-	printf("大きい方の値は%dです。\n", max2(n1, n2));
-
+	printf("最大値は%dです。\n", max3(a, b, c));
 
 	return 0;
 }
