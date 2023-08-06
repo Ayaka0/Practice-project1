@@ -6,21 +6,30 @@ void put_chars(int ch, int n)
 		putchar(ch);
 }
 
+void put_chars_ln(int ch, int n)
+{
+	put_chars(ch, n);
+	putchar('\n');
+}
+
+void alert(int n)
+{
+	put_chars('*', n);
+}
+
 int main(void)
 {
-	int len;
+	int n;
 
-	printf("‰E‰º’¼ŠpOŠpŒ`‚ğì‚è‚Ü‚·B\n");
-	printf("’Z•ÓF");
-	scanf("%d", &len);
+	put_chars_ln('=', 24);
+	printf("Œx•ñ‚ğ”­‚·‚é‰ñ”F");
+	scanf("%d", &n);
+	put_chars_ln('-', 24);
 
-	int i;
-	for (i = 1; i <= len; i++)
-	{
-		put_chars(' ', len - i);
-		put_chars('*', i);
-		putchar('\n');
-	}
+	alert(n);
+	putchar('\n');
+
+	put_chars_ln('=', 24);
 
 	return 0;
 }
