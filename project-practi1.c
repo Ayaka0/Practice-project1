@@ -1,39 +1,34 @@
 #include<stdio.h>
 
-int scan_pint(void)
+#define NUMBER 5 //学生の人数
+int tensu[NUMBER]; //配列の定義
+int top(void); //関数topの関数原型宣言
+
+int top(void)
 {
-	int tmp;
+	extern int tensu[]; //配列の宣言
+	int max = tensu[0];
 
-	do
-	{
-		printf("正の整数を入力せよ");
-		scanf("%d", &tmp);
-		if (tmp <= 0)
-			puts("\a正でない数を入力しないで");
-	} while (tmp <= 0);
-	return tmp;
-}
-
-int rev_int(int num)
-{
-	int tmp = 0;
-
-	if (num > 0)
-	{
-		do
-		{
-			tmp = tmp * 10 + num % 10;
-			num /= 10;
-		} while (num > 0);
-	}
-	return tmp;
+	int i;
+	for (i = 1; i < NUMBER; i++)
+		if (tensu[i] > max)
+			max = tensu[i];
+	return max;
 
 }
 
 int main(void)
 {
-	int nx = scan_pint();
-	printf("反転した値は%dです。\n", rev_int(nx));
+	extern int tensu[];
+
+	printf("%d人の点数を入力せよ。\n", NUMBER);
+	int i;
+	for (i = 0; i < NUMBER; i++)
+	{
+		printf("%d : ", i + 1);
+		scanf("%d", &tensu[i]);
+	}
+	printf("最高点＝%d\n", top());
 
 	return 0;
 }
