@@ -1,35 +1,39 @@
 #include<stdio.h>
 
-void put_chars(int ch, int n)
+int scan_pint(void)
 {
-	while (n-- > 0)
-		putchar(ch);
+	int tmp;
+
+	do
+	{
+		printf("³‚Ì®”‚ğ“ü—Í‚¹‚æ");
+		scanf("%d", &tmp);
+		if (tmp <= 0)
+			puts("\a³‚Å‚È‚¢”‚ğ“ü—Í‚µ‚È‚¢‚Å");
+	} while (tmp <= 0);
+	return tmp;
 }
 
-void put_chars_ln(int ch, int n)
+int rev_int(int num)
 {
-	put_chars(ch, n);
-	putchar('\n');
-}
+	int tmp = 0;
 
-void alert(int n)
-{
-	put_chars('*', n);
+	if (num > 0)
+	{
+		do
+		{
+			tmp = tmp * 10 + num % 10;
+			num /= 10;
+		} while (num > 0);
+	}
+	return tmp;
+
 }
 
 int main(void)
 {
-	int n;
-
-	put_chars_ln('=', 24);
-	printf("Œx•ñ‚ğ”­‚·‚é‰ñ”F");
-	scanf("%d", &n);
-	put_chars_ln('-', 24);
-
-	alert(n);
-	putchar('\n');
-
-	put_chars_ln('=', 24);
+	int nx = scan_pint();
+	printf("”½“]‚µ‚½’l‚Í%d‚Å‚·B\n", rev_int(nx));
 
 	return 0;
 }
