@@ -1,37 +1,46 @@
 #include<stdio.h>
 
-#define NUMBER 5 //学生の人数
-
-
-int min_of(int v[], int n)
+int scan_int(void)
 {
-	int min = v[0];
+	int tmp;
 
-	int i;
-	for (i = 1; i < n; i++)
-		if (v[i] < min)
-			min = v[i];
-	return min;
+	printf("整数値：");
+	scanf("%d", &tmp);
+
+	return tmp;
+}
+
+int ave_of(int a, int b)
+{
+	return (a + b) / 2;
 }
 
 int main(void)
 {
-	int eng[NUMBER];
-	int mat[NUMBER];
+	int n1 = scan_int();
+	int n2 = scan_int();
+	int n3 = scan_int();
+	int ave;
 
-	printf("%d人の点数を入力。\n", NUMBER);
-	int i;
-	for (i = 0; i < NUMBER; i++)
-	{
-		printf("[%d]英語：", i + 1); scanf("%d", &eng[i]);
-		printf("数学："); scanf("%d", &mat[i]);
-	}
+	if ((ave = ave_of(n1, n2)) == 0)
+		printf("n1とn2の平均値はゼロです。\n");
+	else if (ave > 0)
+		printf("n1とn2の￥平均値は正で値は%dです。\n", ave);
+	else
+		printf("n1とn2の平均値は負で値は%dです。\n", ave);
 
-	int min_e = min_of(eng, NUMBER);
-	int min_m = min_of(mat, NUMBER);
+	if ((ave = ave_of(n1, n3)) == 0)
+		printf("n1とn3の平均値はゼロです。\n");
+	else if (ave > 0)
+		printf("n1とn3の￥平均値は正で値は%dです。\n", ave);
+	else
+		printf("n1とn3の平均値は負で値は%dです。\n", ave);
 
-	printf("英語の最低点=%d\n", min_e);
-	printf("数学の最低点=%d\n", min_m);
-
+	if ((ave = ave_of(n2, n3)) == 0)
+		printf("n2とn3の平均値はゼロです。\n");
+	else if (ave > 0)
+		printf("n2とn3の￥平均値は正で値は%dです。\n", ave);
+	else
+		printf("n2とn3の平均値は負で値は%dです。");
 	return 0;
 }
