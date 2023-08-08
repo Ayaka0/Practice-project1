@@ -3,15 +3,15 @@
 #define NUMBER 5 //学生の人数
 
 
-int max_of(int v[], int n)
+int min_of(int v[], int n)
 {
-	int max = v[0];
+	int min = v[0];
 
 	int i;
 	for (i = 1; i < n; i++)
-		if (v[i] > max)
-			max = v[i];
-	return max;
+		if (v[i] < min)
+			min = v[i];
+	return min;
 }
 
 int main(void)
@@ -27,11 +27,11 @@ int main(void)
 		printf("数学："); scanf("%d", &mat[i]);
 	}
 
-	int max_e = max_of(eng, NUMBER);
-	int max_m = max_of(mat, NUMBER);
+	int min_e = min_of(eng, NUMBER);
+	int min_m = min_of(mat, NUMBER);
 
-	printf("英語の最高点=%d\n", max_e);
-	printf("数学の最高点=%d\n", max_m);
+	printf("英語の最低点=%d\n", min_e);
+	printf("数学の最低点=%d\n", min_m);
 
 	return 0;
 }
