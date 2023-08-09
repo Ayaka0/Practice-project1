@@ -1,46 +1,38 @@
 #include<stdio.h>
 
-int scan_int(void)
+#define NUMBER 7 //学生人数
+
+int tensu[NUMBER]; //配列の定義
+
+int pass(void); //関数passのプロトタイプ宣言
+
+
+int pass(void)
 {
-	int tmp;
+	extern tensu[NUMBER];
 
-	printf("整数値：");
-	scanf("%d", &tmp);
-
-	return tmp;
+	printf("合格者一覧表\n");
+	printf("---------------\n");
+	int i;
+	for (i = 0; i < NUMBER; i++)
+		if (tensu[i] >= 60)
+			printf("%d番：%d\n", i+1, tensu[i]);
 }
 
-int ave_of(int a, int b)
-{
-	return (a + b) / 2;
-}
 
 int main(void)
 {
-	int n1 = scan_int();
-	int n2 = scan_int();
-	int n3 = scan_int();
-	int ave;
+	extern int tensu[];
 
-	if ((ave = ave_of(n1, n2)) == 0)
-		printf("n1とn2の平均値はゼロです。\n");
-	else if (ave > 0)
-		printf("n1とn2の￥平均値は正で値は%dです。\n", ave);
-	else
-		printf("n1とn2の平均値は負で値は%dです。\n", ave);
-
-	if ((ave = ave_of(n1, n3)) == 0)
-		printf("n1とn3の平均値はゼロです。\n");
-	else if (ave > 0)
-		printf("n1とn3の￥平均値は正で値は%dです。\n", ave);
-	else
-		printf("n1とn3の平均値は負で値は%dです。\n", ave);
-
-	if ((ave = ave_of(n2, n3)) == 0)
-		printf("n2とn3の平均値はゼロです。\n");
-	else if (ave > 0)
-		printf("n2とn3の￥平均値は正で値は%dです。\n", ave);
-	else
-		printf("n2とn3の平均値は負で値は%dです。");
-	return 0;
+	printf("%d人の点数を入力：\n", NUMBER);
+	int i;
+	for (i = 0; i < NUMBER; i++)
+	{
+		printf("%d：", i + 1);
+		scanf("%d", &tensu[i]);
+	}
+	
+	pass();
+		
+		return 0;
 }
