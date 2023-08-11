@@ -1,38 +1,30 @@
 #include<stdio.h>
 
-#define NUMBER 7 //学生人数
+#define NUMBER 7
 
-int tensu[NUMBER]; //配列の定義
-
-int pass(void); //関数passのプロトタイプ宣言
-
-
-int pass(void)
+void intary_rcpy(int v1[], const v2[], int n)
 {
-	extern tensu[NUMBER];
-
-	printf("合格者一覧表\n");
-	printf("---------------\n");
 	int i;
-	for (i = 0; i < NUMBER; i++)
-		if (tensu[i] >= 60)
-			printf("%d番：%d\n", i+1, tensu[i]);
+	for (i = 0; i < n; i++)
+		v1[i] = v2[n - i - 1];
 }
 
 
 int main(void)
 {
-	extern int tensu[];
+	int x1[NUMBER], x2[NUMBER];
 
-	printf("%d人の点数を入力：\n", NUMBER);
 	int i;
 	for (i = 0; i < NUMBER; i++)
 	{
-		printf("%d：", i + 1);
-		scanf("%d", &tensu[i]);
+		printf("x1[%d] ; ", i);
+		scanf("%d", &x1[i]);
 	}
-	
-	pass();
+	intary_rcpy(x2, x1, NUMBER);
+
+	puts("反転コピー");
+	for (i = 0; i < NUMBER; i++)
+		printf("x2[%d] = %d\n", i, x2[i]);
 		
 		return 0;
 }
