@@ -1,43 +1,39 @@
+//”z—ñ‚Ì‘S—v‘f‚ğƒ[ƒ‚É‚·‚é
 #include<stdio.h>
 
-#define NUMBER 5 //—v‘f”
-#define FAILED -1 //’Tõ¸”s
-
-//—v‘f”n‚Ì”z—ñv‚©‚çkey‚Æˆê’v‚·‚é—v‘f‚ğ’Tõi”Ô•º–@j
-int search(int v[], int key, int n)
+//—v‘f”n‚Ì”z—ñv‚Ì—v‘f‚É0‚ğ‘ã“ü
+void set_zero(int v[], int n)
 {
-	int i = 0;
-	v[n] = key; //”Ô•º‚ğŠi”[
-
-	while (1)
-	{
-		if (v[i] == key)
-			break;
-		i++;
-	}
-	return i < n ? i : FAILED;
+	int i;
+	for (i = 0; i < n; i++)
+		v[i] = 0;
 }
 
+//—v‘f”n‚Ì‘S—v‘f”‚ğ•\¦‚µ‚Ä‰üs
+void print_array(const int v[], int n)
+{
+	printf("{");
+	int i;
+	for (i = 0; i < n; i++)
+		printf("%d", v[i]);
+	printf("}\n");
+}
 
 int main(void)
 {
-	int ky, idx;
-	int x[NUMBER + 1];
-	int i;
+	int ary1[] = { 1,2,3,4,5 };
+	int ary2[] = { 3,2,1 };
 
-	for (i = 0; i < NUMBER; i++)
-	{
-		printf("x[%d]:", i);
-		scanf("%d", &x[i]);
-	}
+	printf("ary1 = "); print_array(ary1, 5);
+	printf("ary2 = "); print_array(ary2, 3);
 
-	printf("’T‚·’lF");
-	scanf("%d", &ky);
+	set_zero(ary1, 5);
+	set_zero(ary2, 3);
 
-	if ((idx = search(x, ky, NUMBER)) == FAILED)
-		puts("’Tõ‚É¸”s");
-	else
-		printf("%d‚Í%d”Ô–Ú‚É‚ ‚éB\n", ky, idx + 1);
+	printf("—¼”z—ñ‚Ì‘S—v‘f‚É0‚ğ‘ã“ü‚µ‚Ü‚µ‚½\n");
+	printf("ary1 = "); print_array(ary1, 5);
+	printf("ary2 = "); print_array(ary2, 3);
 
-		return 0;
+
+	return 0;
 }
