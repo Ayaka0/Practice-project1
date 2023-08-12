@@ -1,30 +1,43 @@
 #include<stdio.h>
 
-#define NUMBER 7
+#define NUMBER 5 //—v‘f”
+#define FAILED -1 //’Tõ¸”s
 
-void intary_rcpy(int v1[], const v2[], int n)
+//—v‘f”n‚Ì”z—ñv‚©‚çkey‚Æˆê’v‚·‚é—v‘f‚ğ’Tõi”Ô•º–@j
+int search(int v[], int key, int n)
 {
-	int i;
-	for (i = 0; i < n; i++)
-		v1[i] = v2[n - i - 1];
+	int i = 0;
+	v[n] = key; //”Ô•º‚ğŠi”[
+
+	while (1)
+	{
+		if (v[i] == key)
+			break;
+		i++;
+	}
+	return i < n ? i : FAILED;
 }
 
 
 int main(void)
 {
-	int x1[NUMBER], x2[NUMBER];
-
+	int ky, idx;
+	int x[NUMBER + 1];
 	int i;
+
 	for (i = 0; i < NUMBER; i++)
 	{
-		printf("x1[%d] ; ", i);
-		scanf("%d", &x1[i]);
+		printf("x[%d]:", i);
+		scanf("%d", &x[i]);
 	}
-	intary_rcpy(x2, x1, NUMBER);
 
-	puts("”½“]ƒRƒs[");
-	for (i = 0; i < NUMBER; i++)
-		printf("x2[%d] = %d\n", i, x2[i]);
-		
+	printf("’T‚·’lF");
+	scanf("%d", &ky);
+
+	if ((idx = search(x, ky, NUMBER)) == FAILED)
+		puts("’Tõ‚É¸”s");
+	else
+		printf("%d‚Í%d”Ô–Ú‚É‚ ‚éB\n", ky, idx + 1);
+
 		return 0;
 }
